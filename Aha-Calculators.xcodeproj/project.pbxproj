@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A692962BCA0B9D5E9ECDB32 /* Pods_Aha_Calculators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB853507AA06642BB59482E0 /* Pods_Aha_Calculators.framework */; };
+		1E7ABBFCA1063B67E183F43E /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */; };
 		A2EF62E62ACFE82D001F7185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */; };
 		A2EF62E82ACFE82D001F7185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */; };
 		A2EF62EA2ACFE82D001F7185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E92ACFE82D001F7185 /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		A2EF62FD2ACFE82F001F7185 /* Aha_CalculatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62FC2ACFE82F001F7185 /* Aha_CalculatorsTests.swift */; };
 		A2EF63072ACFE82F001F7185 /* Aha_CalculatorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF63062ACFE82F001F7185 /* Aha_CalculatorsUITests.swift */; };
 		A2EF63092ACFE82F001F7185 /* Aha_CalculatorsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF63082ACFE82F001F7185 /* Aha_CalculatorsUITestsLaunchTests.swift */; };
+		D4C2A21845AC367C72107B48 /* Pods_Aha_CalculatorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEF653C4043D20071E71445 /* Pods_Aha_CalculatorsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F94589ABC99C4440C5D07CC /* Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4BEF653C4043D20071E71445 /* Pods_Aha_CalculatorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_CalculatorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_Calculators_Aha_CalculatorsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF62E22ACFE82D001F7185 /* Aha-Calculators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aha-Calculators.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		A2EF63022ACFE82F001F7185 /* Aha-CalculatorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aha-CalculatorsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF63062ACFE82F001F7185 /* Aha_CalculatorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aha_CalculatorsUITests.swift; sourceTree = "<group>"; };
 		A2EF63082ACFE82F001F7185 /* Aha_CalculatorsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aha_CalculatorsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C029751199B6BF854C36E5E3 /* Pods-Aha-CalculatorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-CalculatorsTests.release.xcconfig"; path = "Target Support Files/Pods-Aha-CalculatorsTests/Pods-Aha-CalculatorsTests.release.xcconfig"; sourceTree = "<group>"; };
+		C14EA5905FD152D0405A922B /* Pods-Aha-Calculators.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators.debug.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators/Pods-Aha-Calculators.debug.xcconfig"; sourceTree = "<group>"; };
+		C29CCF052466B52031D8F40D /* Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1A763A7ECFFCF5F69BE735F /* Pods-Aha-Calculators.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators.release.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators/Pods-Aha-Calculators.release.xcconfig"; sourceTree = "<group>"; };
+		F437A64A67E63ACA3E5000D1 /* Pods-Aha-CalculatorsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-CalculatorsTests.debug.xcconfig"; path = "Target Support Files/Pods-Aha-CalculatorsTests/Pods-Aha-CalculatorsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB853507AA06642BB59482E0 /* Pods_Aha_Calculators.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_Calculators.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A692962BCA0B9D5E9ECDB32 /* Pods_Aha_Calculators.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C2A21845AC367C72107B48 /* Pods_Aha_CalculatorsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7ABBFCA1063B67E183F43E /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		867985DC0EC5D8BD5DF55D9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C14EA5905FD152D0405A922B /* Pods-Aha-Calculators.debug.xcconfig */,
+				E1A763A7ECFFCF5F69BE735F /* Pods-Aha-Calculators.release.xcconfig */,
+				C29CCF052466B52031D8F40D /* Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig */,
+				2F94589ABC99C4440C5D07CC /* Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig */,
+				F437A64A67E63ACA3E5000D1 /* Pods-Aha-CalculatorsTests.debug.xcconfig */,
+				C029751199B6BF854C36E5E3 /* Pods-Aha-CalculatorsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9DA65C588E44877B4007BB28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB853507AA06642BB59482E0 /* Pods_Aha_Calculators.framework */,
+				54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */,
+				4BEF653C4043D20071E71445 /* Pods_Aha_CalculatorsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2EF62D92ACFE82D001F7185 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				A2EF62FB2ACFE82F001F7185 /* Aha-CalculatorsTests */,
 				A2EF63052ACFE82F001F7185 /* Aha-CalculatorsUITests */,
 				A2EF62E32ACFE82D001F7185 /* Products */,
+				867985DC0EC5D8BD5DF55D9B /* Pods */,
+				9DA65C588E44877B4007BB28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2EF630C2ACFE82F001F7185 /* Build configuration list for PBXNativeTarget "Aha-Calculators" */;
 			buildPhases = (
+				9A0E98C401EFDF9BEE480990 /* [CP] Check Pods Manifest.lock */,
 				A2EF62DE2ACFE82D001F7185 /* Sources */,
 				A2EF62DF2ACFE82D001F7185 /* Frameworks */,
 				A2EF62E02ACFE82D001F7185 /* Resources */,
+				3A07C65B0325F0C6C0249F3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2EF630F2ACFE82F001F7185 /* Build configuration list for PBXNativeTarget "Aha-CalculatorsTests" */;
 			buildPhases = (
+				D186D4D7F7646B23D1AF961B /* [CP] Check Pods Manifest.lock */,
 				A2EF62F42ACFE82F001F7185 /* Sources */,
 				A2EF62F52ACFE82F001F7185 /* Frameworks */,
 				A2EF62F62ACFE82F001F7185 /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2EF63122ACFE82F001F7185 /* Build configuration list for PBXNativeTarget "Aha-CalculatorsUITests" */;
 			buildPhases = (
+				C3CA167794BA69F8C5B119F4 /* [CP] Check Pods Manifest.lock */,
 				A2EF62FE2ACFE82F001F7185 /* Sources */,
 				A2EF62FF2ACFE82F001F7185 /* Frameworks */,
 				A2EF63002ACFE82F001F7185 /* Resources */,
+				D2AB367244DE2CD127AEF5C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A07C65B0325F0C6C0249F3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aha-Calculators/Pods-Aha-Calculators-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aha-Calculators/Pods-Aha-Calculators-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aha-Calculators/Pods-Aha-Calculators-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A0E98C401EFDF9BEE480990 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aha-Calculators-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3CA167794BA69F8C5B119F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aha-Calculators-Aha-CalculatorsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D186D4D7F7646B23D1AF961B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aha-CalculatorsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2AB367244DE2CD127AEF5C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A2EF62DE2ACFE82D001F7185 /* Sources */ = {
@@ -432,6 +581,7 @@
 		};
 		A2EF630D2ACFE82F001F7185 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C14EA5905FD152D0405A922B /* Pods-Aha-Calculators.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +609,7 @@
 		};
 		A2EF630E2ACFE82F001F7185 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1A763A7ECFFCF5F69BE735F /* Pods-Aha-Calculators.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -486,6 +637,7 @@
 		};
 		A2EF63102ACFE82F001F7185 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F437A64A67E63ACA3E5000D1 /* Pods-Aha-CalculatorsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +657,7 @@
 		};
 		A2EF63112ACFE82F001F7185 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C029751199B6BF854C36E5E3 /* Pods-Aha-CalculatorsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +677,7 @@
 		};
 		A2EF63132ACFE82F001F7185 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29CCF052466B52031D8F40D /* Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +695,7 @@
 		};
 		A2EF63142ACFE82F001F7185 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F94589ABC99C4440C5D07CC /* Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
