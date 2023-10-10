@@ -17,6 +17,7 @@
 		A2EF62FD2ACFE82F001F7185 /* Aha_CalculatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62FC2ACFE82F001F7185 /* Aha_CalculatorsTests.swift */; };
 		A2EF63072ACFE82F001F7185 /* Aha_CalculatorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF63062ACFE82F001F7185 /* Aha_CalculatorsUITests.swift */; };
 		A2EF63092ACFE82F001F7185 /* Aha_CalculatorsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF63082ACFE82F001F7185 /* Aha_CalculatorsUITestsLaunchTests.swift */; };
+		A2F3D8992ACFF2D60074F7A1 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3D8982ACFF2D60074F7A1 /* CalculatorButton.swift */; };
 		D4C2A21845AC367C72107B48 /* Pods_Aha_CalculatorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEF653C4043D20071E71445 /* Pods_Aha_CalculatorsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		A2EF63022ACFE82F001F7185 /* Aha-CalculatorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aha-CalculatorsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF63062ACFE82F001F7185 /* Aha_CalculatorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aha_CalculatorsUITests.swift; sourceTree = "<group>"; };
 		A2EF63082ACFE82F001F7185 /* Aha_CalculatorsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aha_CalculatorsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A2F3D8982ACFF2D60074F7A1 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		C029751199B6BF854C36E5E3 /* Pods-Aha-CalculatorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-CalculatorsTests.release.xcconfig"; path = "Target Support Files/Pods-Aha-CalculatorsTests/Pods-Aha-CalculatorsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C14EA5905FD152D0405A922B /* Pods-Aha-Calculators.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators.debug.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators/Pods-Aha-Calculators.debug.xcconfig"; sourceTree = "<group>"; };
 		C29CCF052466B52031D8F40D /* Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */,
 				A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */,
 				A2EF62E92ACFE82D001F7185 /* ViewController.swift */,
+				A2F3D8982ACFF2D60074F7A1 /* CalculatorButton.swift */,
 				A2EF62EE2ACFE82F001F7185 /* Assets.xcassets */,
 				A2EF62F02ACFE82F001F7185 /* LaunchScreen.storyboard */,
 				A2EF62F32ACFE82F001F7185 /* Info.plist */,
@@ -405,6 +408,7 @@
 				A2EF62EA2ACFE82D001F7185 /* ViewController.swift in Sources */,
 				A2EF62E62ACFE82D001F7185 /* AppDelegate.swift in Sources */,
 				A2EF62E82ACFE82D001F7185 /* SceneDelegate.swift in Sources */,
+				A2F3D8992ACFF2D60074F7A1 /* CalculatorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +585,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,6 +614,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
