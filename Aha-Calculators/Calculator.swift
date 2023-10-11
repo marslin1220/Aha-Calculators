@@ -25,9 +25,22 @@ final class Calculator: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let height = frame.height
+        let ratio = height / 609
+        resultLabel.font = .systemFont(ofSize: 110 * ratio)
+        formulaLabel.font = .systemFont(ofSize: 40 * ratio)
+        buttonStack.spacing = Constant.buttonGapWidth * ratio
+        buttonStack.arrangedSubviews
+            .compactMap { $0 as? UIStackView }
+            .forEach { $0.spacing = Constant.buttonGapWidth * Constant.ratio * ratio }
+    }
+
     // MARK: - Private Methods
 
     private func setupUI() {
+        resultLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         resultLabel
             .addToParentView(self)
             .snp.makeConstraints {
@@ -35,6 +48,7 @@ final class Calculator: UIView {
             }
         resultLabel.text = "1234"
 
+        formulaLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         formulaLabel
             .addToParentView(self)
             .snp.makeConstraints {
@@ -55,11 +69,6 @@ final class Calculator: UIView {
             button.snp.makeConstraints {
                 $0.width.equalTo(button.snp.height).multipliedBy(Constant.ratio)
             }
-        }
-        zeroButton.snp.makeConstraints {
-            $0.width.equalTo(zeroButton.snp.height)
-                .multipliedBy(Constant.ratio * 2)
-                .offset(Constant.buttonGapWidth * Constant.ratio)
         }
     }
 
@@ -118,19 +127,13 @@ final class Calculator: UIView {
     private lazy var buttonStack: UIStackView = {
         $0
             .setAxis(.vertical)
-            .setSpacing(Constant.buttonGapWidth)
             .addArrangedSubviews(
                 [
-                    UIStackView(arrangedSubviews: [acButton, signButton, percentButton, dividButton])
-                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
-                    UIStackView(arrangedSubviews: [sevenButton, eightButton, nighButton, multiplyButton])
-                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
-                    UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, minusButton])
-                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
-                    UIStackView(arrangedSubviews: [oneButton, twoButton, threeButton, plusButton])
-                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
+                    UIStackView(arrangedSubviews: [acButton, signButton, percentButton, dividButton]),
+                    UIStackView(arrangedSubviews: [sevenButton, eightButton, nighButton, multiplyButton]),
+                    UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, minusButton]),
+                    UIStackView(arrangedSubviews: [oneButton, twoButton, threeButton, plusButton]),
                     UIStackView(arrangedSubviews: [zeroButton, dotButton, equalButton])
-                        .setSpacing(Constant.buttonGapWidth * Constant.ratio)
                 ]
             )
             .setDistribution(.fillEqually)

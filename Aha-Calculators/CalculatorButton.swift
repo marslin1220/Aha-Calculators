@@ -30,6 +30,14 @@ final class CalculatorButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let height = frame.height
+        let ratio = height / 80
+        layer.cornerRadius = 15 * ratio
+        titleLabel?.font = .systemFont(ofSize: type.fontSize * ratio)
+    }
+
     // MARK: - Private Methods
 
     private func setupUI() {
@@ -40,13 +48,11 @@ final class CalculatorButton: UIButton {
     private func setTitle() {
         setTitle(type.label, for: .normal)
         titleLabel?.numberOfLines = 1
-        titleLabel?.font = .systemFont(ofSize: type.fontSize)
         titleLabel?.adjustsFontSizeToFitWidth = true
         setTitleColor(.white, for: .normal)
     }
 
     private func setBackground() {
-        layer.cornerRadius = 15
         layer.masksToBounds = true
         backgroundColor = type.backgroundColor
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A692962BCA0B9D5E9ECDB32 /* Pods_Aha_Calculators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB853507AA06642BB59482E0 /* Pods_Aha_Calculators.framework */; };
 		1E7ABBFCA1063B67E183F43E /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */; };
+		A2A4405C2AD4FA8E008B16DC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4405B2AD4FA8E008B16DC /* Calculator.swift */; };
 		A2EF62E62ACFE82D001F7185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */; };
 		A2EF62E82ACFE82D001F7185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */; };
 		A2EF62EA2ACFE82D001F7185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E92ACFE82D001F7185 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		2F94589ABC99C4440C5D07CC /* Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Aha-Calculators-Aha-CalculatorsUITests/Pods-Aha-Calculators-Aha-CalculatorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4BEF653C4043D20071E71445 /* Pods_Aha_CalculatorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_CalculatorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_Calculators_Aha_CalculatorsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A4405B2AD4FA8E008B16DC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		A2EF62E22ACFE82D001F7185 /* Aha-Calculators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aha-Calculators.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */,
 				A2EF62E92ACFE82D001F7185 /* ViewController.swift */,
 				A2F3D8982ACFF2D60074F7A1 /* CalculatorButton.swift */,
+				A2A4405B2AD4FA8E008B16DC /* Calculator.swift */,
 				A2EF62EE2ACFE82F001F7185 /* Assets.xcassets */,
 				A2EF62F02ACFE82F001F7185 /* LaunchScreen.storyboard */,
 				A2EF62F32ACFE82F001F7185 /* Info.plist */,
@@ -408,6 +411,7 @@
 				A2EF62EA2ACFE82D001F7185 /* ViewController.swift in Sources */,
 				A2EF62E62ACFE82D001F7185 /* AppDelegate.swift in Sources */,
 				A2EF62E82ACFE82D001F7185 /* SceneDelegate.swift in Sources */,
+				A2A4405C2AD4FA8E008B16DC /* Calculator.swift in Sources */,
 				A2F3D8992ACFF2D60074F7A1 /* CalculatorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
