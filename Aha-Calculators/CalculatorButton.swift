@@ -9,25 +9,12 @@ import Foundation
 import UIKit
 import SnapKit
 
-class CalculatorButton: UIButton {
+final class CalculatorButton: UIButton {
     enum Types {
         case operation(_ op: String)
         case function(_ fun: String)
-        case number(_ num: Int)
+        case number(_ num: String)
         case arrow(_ ar: String)
-
-        var label: String {
-            switch self {
-            case let .operation(op):
-                return op
-            case let .function(fun):
-                return fun
-            case let .number(num):
-                return "\(num)"
-            case let .arrow(ar):
-                return ar
-            }
-        }
     }
 
     private let type: Types
@@ -52,29 +39,57 @@ class CalculatorButton: UIButton {
 
     private func setTitle() {
         setTitle(type.label, for: .normal)
-        titleLabel?.font = .systemFont(ofSize: 40)
+        titleLabel?.numberOfLines = 1
+        titleLabel?.font = .systemFont(ofSize: type.fontSize)
         titleLabel?.adjustsFontSizeToFitWidth = true
         setTitleColor(.white, for: .normal)
     }
 
     private func setBackground() {
-        layer.cornerRadius = 10
+        layer.cornerRadius = 15
         layer.masksToBounds = true
-
-        switch type {
-        case .operation:
-            backgroundColor = UIColor.rgb(r: 234, g: 164, b: 43)
-        case .arrow:
-            backgroundColor = UIColor.rgb(r: 63, g: 141, b: 84)
-        case .function:
-            backgroundColor = UIColor.rgb(r: 165, g: 165, b: 165)
-        case .number:
-            backgroundColor = UIColor.rgb(r: 50, g: 50, b: 50)
-        }
+        backgroundColor = type.backgroundColor
     }
 }
 
 // MARK: Private Extensions
+
+extension CalculatorButton.Types {
+    var label: String {
+        switch self {
+        case let .operation(op):
+            return op
+        case let .function(fun):
+            return fun
+        case let .number(num):
+            return num
+        case let .arrow(ar):
+            return ar
+        }
+    }
+
+    var backgroundColor: UIColor {
+        switch self {
+        case .operation:
+            return UIColor.rgb(r: 234, g: 164, b: 43)
+        case .arrow:
+            return UIColor.rgb(r: 63, g: 141, b: 84)
+        case .function:
+            return UIColor.rgb(r: 165, g: 165, b: 165)
+        case .number:
+            return UIColor.rgb(r: 50, g: 50, b: 50)
+        }
+    }
+
+    var fontSize: CGFloat {
+        switch self {
+        case .function:
+            return 50
+        default:
+            return 70
+        }
+    }
+}
 
 private extension UIColor {
     static func rgb(r: Int, g: Int, b: Int, alpha: CGFloat = 1) -> UIColor {
@@ -105,5 +120,5 @@ private extension UInt {
 }
 
 #Preview {
-    CalculatorButton(type: .number(1))
+    CalculatorButton(type: .number("1"))
 }
