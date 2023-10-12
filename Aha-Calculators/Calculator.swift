@@ -11,7 +11,7 @@ import UIKit
 
 final class Calculator: UIView {
     private enum Constant {
-        static let buttonGapWidth: CGFloat = 7
+        static let buttonGapWidth: CGFloat = 5
         static let ratio: CGFloat = 1.15
     }
 
@@ -25,22 +25,11 @@ final class Calculator: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let height = frame.height
-        let ratio = height / 609
-        resultLabel.font = .systemFont(ofSize: 110 * ratio)
-        formulaLabel.font = .systemFont(ofSize: 40 * ratio)
-        buttonStack.spacing = Constant.buttonGapWidth * ratio
-        buttonStack.arrangedSubviews
-            .compactMap { $0 as? UIStackView }
-            .forEach { $0.spacing = Constant.buttonGapWidth * Constant.ratio * ratio }
-    }
-
     // MARK: - Private Methods
 
     private func setupUI() {
         resultLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        resultLabel.setContentHuggingPriority(.required, for: .vertical)
         resultLabel
             .addToParentView(self)
             .snp.makeConstraints {
@@ -49,6 +38,7 @@ final class Calculator: UIView {
         resultLabel.text = "1234"
 
         formulaLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        formulaLabel.setContentHuggingPriority(.required, for: .vertical)
         formulaLabel
             .addToParentView(self)
             .snp.makeConstraints {
@@ -74,20 +64,20 @@ final class Calculator: UIView {
 
     // MARK: - UI Components
     private lazy var resultLabel: UILabel = {
-        $0.font = .systemFont(ofSize: 110)
+        $0.font = .systemFont(ofSize: 65)
         $0.textColor = .white
         return $0
     }(UILabel())
 
     private lazy var formulaLabel: UILabel = {
-        $0.font = .systemFont(ofSize: 40)
+        $0.font = .systemFont(ofSize: 25)
         $0.textColor = .white
         return $0
     }(UILabel())
     private let acButton = CalculatorButton(type: .function("AC"))
     private let signButton = CalculatorButton(type: .function("+/-"))
     private let percentButton = CalculatorButton(type: .function("%"))
-    private let dividButton = CalculatorButton(type: .operation("÷"))
+    let dividButton = CalculatorButton(type: .operation("÷"))
     private let multiplyButton = CalculatorButton(type: .operation("x"))
     private let minusButton = CalculatorButton(type: .operation("-"))
     private let plusButton = CalculatorButton(type: .operation("+"))
@@ -127,13 +117,19 @@ final class Calculator: UIView {
     private lazy var buttonStack: UIStackView = {
         $0
             .setAxis(.vertical)
+            .setSpacing(Constant.buttonGapWidth)
             .addArrangedSubviews(
                 [
-                    UIStackView(arrangedSubviews: [acButton, signButton, percentButton, dividButton]),
-                    UIStackView(arrangedSubviews: [sevenButton, eightButton, nighButton, multiplyButton]),
-                    UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, minusButton]),
-                    UIStackView(arrangedSubviews: [oneButton, twoButton, threeButton, plusButton]),
+                    UIStackView(arrangedSubviews: [acButton, signButton, percentButton, dividButton])
+                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
+                    UIStackView(arrangedSubviews: [sevenButton, eightButton, nighButton, multiplyButton])
+                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
+                    UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, minusButton])
+                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
+                    UIStackView(arrangedSubviews: [oneButton, twoButton, threeButton, plusButton])
+                        .setSpacing(Constant.buttonGapWidth * Constant.ratio),
                     UIStackView(arrangedSubviews: [zeroButton, dotButton, equalButton])
+                        .setSpacing(Constant.buttonGapWidth * Constant.ratio)
                 ]
             )
             .setDistribution(.fillEqually)
