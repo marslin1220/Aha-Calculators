@@ -31,13 +31,17 @@ final class Calculator: UIView {
 
     // MARK: - Public interface
 
-    var currentResult: String? {
-        resultLabel.text
+    var currentResult: String {
+        viewModel.resultString
     }
 
     func reset() {
-        resultLabel.text = nil
-        formulaLabel.text = nil
+        viewModel.reset()
+    }
+
+    func setResult(_ result: String) {
+        viewModel.reset()
+        viewModel.setResult(result)
     }
 
     // MARK: - Private Methods
@@ -57,7 +61,7 @@ final class Calculator: UIView {
         formulaLabel
             .addToParentView(self)
             .snp.makeConstraints {
-                $0.top.equalTo(resultLabel.snp.bottom).offset(-10)
+                $0.top.equalTo(resultLabel.snp.bottom)
                 $0.leading.trailing.equalToSuperview()
             }
         formulaLabel.text = " "
@@ -83,6 +87,8 @@ final class Calculator: UIView {
             button.addTarget(self, action: #selector(didClickButton(_:)), for: .touchUpInside)
         }
     }
+
+    // MARK: - Selectors
 
     @objc private func didClickButton(_ button: CalculatorButton) {
         viewModel.didClickButton(button)

@@ -24,6 +24,7 @@ final class EnhancedCalculatorViewController: UIViewController {
         super.viewDidLoad()
         observeRotation()
         setupUI()
+        setupAction()
     }
 
     override func viewDidLayoutSubviews() {
@@ -131,6 +132,27 @@ final class EnhancedCalculatorViewController: UIViewController {
             $0.width.height.equalTo(buttonHeight)
             $0.centerX.equalToSuperview()
         }
+    }
+
+    private func setupAction() {
+        rightArrowButton.addTarget(self, action: #selector(didClickRightArrowButton), for: .touchUpInside)
+        leftArrowButton.addTarget(self, action: #selector(didClickLeftArrowButton), for: .touchUpInside)
+        deleteButton.addTarget(self, action: #selector(didClickDeleteButton), for: .touchUpInside)
+    }
+
+    // MARK: - Selectors
+
+    @objc private func didClickRightArrowButton() {
+        rightCalculator.setResult(leftCalculator.currentResult)
+    }
+
+    @objc private func didClickLeftArrowButton() {
+        leftCalculator.setResult(rightCalculator.currentResult)
+    }
+
+    @objc private func didClickDeleteButton() {
+        rightCalculator.reset()
+        leftCalculator.reset()
     }
 
     // MARK: - UI Components
