@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import UIKit
 import SnapKit
+import UIKit
 
 final class CalculatorButton: UIButton {
     enum Types: Equatable {
@@ -24,7 +24,7 @@ final class CalculatorButton: UIButton {
         super.init(frame: .zero)
         setupUI()
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

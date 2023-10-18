@@ -73,7 +73,7 @@ final class CalculatorViewModel {
         }
     }
 
-    //MARK: - Button Handler
+    // MARK: - Button Handler
 
     private func didClickFuntionButton(_ buttonType: CalculatorButton.Types) {
         switch buttonType {
@@ -93,10 +93,10 @@ final class CalculatorViewModel {
         case .equalButtonType:
             didClickEqualButton(buttonType)
         case .operation:
-            if .equalButtonType == formulaStack.last {
+            if formulaStack.last == .equalButtonType {
                 formulaStack.removeLast()
             }
-            if case .operation(_) = formulaStack.last {
+            if case .operation = formulaStack.last {
                 formulaStack.removeLast()
             }
             formulaStack.append(buttonType)
@@ -108,7 +108,7 @@ final class CalculatorViewModel {
     private func didClickNumberButton(_ buttonType: CalculatorButton.Types) {
         switch buttonType {
         case .dotButtonType:
-            if .equalButtonType == formulaStack.last {
+            if formulaStack.last == .equalButtonType {
                 formulaStack.removeLast()
             }
             if case let .number(lastNum) = formulaStack.last, !lastNum.contains(".") {
@@ -119,7 +119,7 @@ final class CalculatorViewModel {
             }
 
         case let .number(num):
-            if .equalButtonType == formulaStack.last {
+            if formulaStack.last == .equalButtonType {
                 reset()
             }
             if isSignActive {
@@ -154,11 +154,11 @@ final class CalculatorViewModel {
         // ex: "+/-", "1" => "-1"
         if formulaStack.isEmpty {
             isSignActive = true
-        } else if .equalButtonType == formulaStack.last {
+        } else if formulaStack.last == .equalButtonType {
             let currentResult = resultString
             reset()
             if let formattedResult = ((-(Double(currentResult) ?? 0)) / 100).groupedString {
-                formulaStack.append(.number(("\(formattedResult)")))
+                formulaStack.append(.number("\(formattedResult)"))
             }
             updateFormula(with: formulaStack)
         } else if case .operation = formulaStack.last {
@@ -169,11 +169,11 @@ final class CalculatorViewModel {
     private func didClickPercentButton(_ buttonType: CalculatorButton.Types) {
         if formulaStack.isEmpty {
             return
-        } else if .equalButtonType == formulaStack.last {
+        } else if formulaStack.last == .equalButtonType {
             let currentResult = resultString
             reset()
             if let formattedResult = ((Double(currentResult) ?? 0) / 100).groupedString {
-                formulaStack.append(.number(("\(formattedResult)")))
+                formulaStack.append(.number("\(formattedResult)"))
             }
             updateFormula(with: formulaStack)
         } else if case let .number(num) = formulaStack.last {
@@ -181,8 +181,9 @@ final class CalculatorViewModel {
             formulaStack.append(.number("\((Double(num) ?? 0) / 100)"))
             return
         } else if formulaStack.count >= 2,
-                  case .operation(_) = formulaStack.last,
-                  case let .number(num) = formulaStack[formulaStack.count - 2] {
+                  case .operation = formulaStack.last,
+                  case let .number(num) = formulaStack[formulaStack.count - 2]
+        {
             let operation = formulaStack.last!
             formulaStack.removeLast()
             formulaStack.removeLast()
@@ -192,7 +193,7 @@ final class CalculatorViewModel {
     }
 
     private func didClickEqualButton(_ buttonType: CalculatorButton.Types) {
-        if .equalButtonType == formulaStack.last { return }
+        if formulaStack.last == .equalButtonType { return }
         formulaStack.append(.equalButtonType)
         result = computeCurrentResult(with: formulaStack)
     }
@@ -265,7 +266,7 @@ final class CalculatorViewModel {
             partialResult = "\(partialResult)\(buttonType.label)"
         }
 
-        if .equalButtonType == formulaStack.last, let formattedString = result?.formattedString {
+        if formulaStack.last == .equalButtonType, let formattedString = result?.formattedString {
             formula = "\(formula)\(formattedString)"
         }
 

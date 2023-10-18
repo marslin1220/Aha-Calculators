@@ -95,6 +95,7 @@ final class Calculator: UIView {
     }
 
     // MARK: - UI Components
+
     private lazy var resultLabel: UILabel = {
         $0.font = .systemFont(ofSize: 65)
         $0.textColor = .white
@@ -110,6 +111,7 @@ final class Calculator: UIView {
         $0.textAlignment = .left
         return $0
     }(UILabel())
+
     private let acButton = CalculatorButton(type: .acButtonType)
     private let signButton = CalculatorButton(type: .signButtonType)
     private let percentButton = CalculatorButton(type: .percentButtonType)
