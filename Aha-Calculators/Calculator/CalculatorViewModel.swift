@@ -19,16 +19,25 @@ final class CalculatorViewModel {
     weak var output: CalculatorViewModelOutput?
 
     private(set) var formulaStack = [CalculatorButton.Types]()
+
     private(set) var formula = CalculatorViewModel.defaultFormula {
         didSet {
             output?.didUpdateFormula(formula)
         }
     }
-    private(set) var result = CalculatorViewModel.defaultResult {
+
+    private(set) var resultString = CalculatorViewModel.defaultResult {
         didSet {
-            output?.didUpdateResult(result)
+            output?.didUpdateResult(resultString)
         }
     }
+
+    private var result: Double? {
+        didSet {
+            resultString = result?.groupedString ?? CalculatorViewModel.defaultResult
+        }
+    }
+
     private var isSignActive: Bool = false
 
     func didClickButton(_ button: CalculatorButton) {
@@ -44,6 +53,24 @@ final class CalculatorViewModel {
         }
 
         updateFormula(with: formulaStack)
+    }
+
+    func reset() {
+        formulaStack.removeAll()
+        result = nil
+        formula = CalculatorViewModel.defaultFormula
+        isSignActive = false
+    }
+
+    func setResult(_ result: String) {
+        reset()
+        if let number = NumberFormatter.groupedFormater.number(from: result) {
+            self.result = number.doubleValue
+            if let formattedNumber = number.doubleValue.formattedString {
+                formulaStack.append(.number("\(formattedNumber)"))
+                updateFormula(with: formulaStack)
+            }
+        }
     }
 
     //MARK: - Button Handler
@@ -128,9 +155,11 @@ final class CalculatorViewModel {
         if formulaStack.isEmpty {
             isSignActive = true
         } else if .equalButtonType == formulaStack.last {
-            let currentResult = result
+            let currentResult = resultString
             reset()
-            formulaStack.append(.number(("\((-(Double(currentResult) ?? 0)).trimmedTrailingZero)")))
+            if let formattedResult = ((-(Double(currentResult) ?? 0)) / 100).groupedString {
+                formulaStack.append(.number(("\(formattedResult)")))
+            }
             updateFormula(with: formulaStack)
         } else if case .operation = formulaStack.last {
             isSignActive = true
@@ -141,9 +170,11 @@ final class CalculatorViewModel {
         if formulaStack.isEmpty {
             return
         } else if .equalButtonType == formulaStack.last {
-            let currentResult = result
+            let currentResult = resultString
             reset()
-            formulaStack.append(.number(("\(((Double(currentResult) ?? 0) / 100).trimmedTrailingZero)")))
+            if let formattedResult = ((Double(currentResult) ?? 0) / 100).groupedString {
+                formulaStack.append(.number(("\(formattedResult)")))
+            }
             updateFormula(with: formulaStack)
         } else if case let .number(num) = formulaStack.last {
             formulaStack.removeLast()
@@ -166,14 +197,7 @@ final class CalculatorViewModel {
         result = computeCurrentResult(with: formulaStack)
     }
 
-    private func reset() {
-        formulaStack.removeAll()
-        result = CalculatorViewModel.defaultResult
-        formula = CalculatorViewModel.defaultFormula
-        isSignActive = false
-    }
-
-    private func computeCurrentResult(with formula: [CalculatorButton.Types]) -> String {
+    private func computeCurrentResult(with formula: [CalculatorButton.Types]) -> Double {
         if let multiplyOpIndex = formula.firstIndex(of: .multiplyButtonType),
            multiplyOpIndex >= 1,
            formula.count > multiplyOpIndex + 1
@@ -220,13 +244,13 @@ final class CalculatorViewModel {
                     }
                 }
             case .operation:
-                lastOperater = element
+                lastOperator = element
             default:
                 break
             }
         }
 
-        return (result ?? 0).trimmedTrailingZero
+        return result ?? 0
     }
 
     private func updateFormula(with formulaStack: [CalculatorButton.Types]) {
@@ -238,11 +262,11 @@ final class CalculatorViewModel {
 
     private func getFormula(with formulaStack: [CalculatorButton.Types]) -> String {
         var formula = formulaStack.reduce(into: "") { partialResult, buttonType in
-            partialResult = "\(partialResult) \(buttonType.label)"
+            partialResult = "\(partialResult)\(buttonType.label)"
         }
 
-        if .equalButtonType == formulaStack.last {
-            formula = "\(formula) \(result)"
+        if .equalButtonType == formulaStack.last, let formattedString = result?.formattedString {
+            formula = "\(formula)\(formattedString)"
         }
 
         return formula
@@ -257,7 +281,19 @@ private extension CalculatorButton.Types {
 }
 
 private extension Double {
-    var trimmedTrailingZero: String {
-        String(format: "%g", self)
+    var formattedString: String? {
+        NumberFormatter.formatter.string(for: self)
     }
+
+    var groupedString: String? {
+        NumberFormatter.groupedFormater.string(for: self)
+    }
+}
+
+private extension NumberFormatter {
+    static let formatter = NumberFormatter()
+    static var groupedFormater: NumberFormatter = {
+        $0.numberStyle = .decimal
+        return $0
+    }(NumberFormatter())
 }

@@ -20,7 +20,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .plusButtonType, .twoButtonType])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickClearButton_thenResetFormula() {
@@ -35,7 +35,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertTrue(sut.formulaStack.isEmpty)
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickSignButton_thenChangeCurrentNumberSign() {
@@ -50,7 +50,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .plusButtonType, .number("-2")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickSignButton_thenChangeComingNumberSign() {
@@ -65,7 +65,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .plusButtonType, .number("-2")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenEmptyFormulaAndClickSignButton_thenChangeComingNumberSign() {
@@ -78,7 +78,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.number("-1")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenEmptyFormulaAndClickPercentButton_thenDoNothing() {
@@ -90,7 +90,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertTrue(sut.formulaStack.isEmpty)
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickPercentButtonWithLastNumber_thenChangeLastNumber() {
@@ -105,7 +105,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .plusButtonType, .number("0.02")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickPercentButtonWithLastOperator_thenChangeLastNumber() {
@@ -119,7 +119,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.number("0.01"), .plusButtonType])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickOperator_thenAppendOperator() {
@@ -132,7 +132,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .plusButtonType])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickTwoOperators_thenKeepTheLastOperator() {
@@ -146,7 +146,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .multiplyButtonType])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickSignAndNumber_thenChangeNumberSign() {
@@ -159,7 +159,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.number("-1")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickSignWithNegtiveNumber_thenChangeNumberSign() {
@@ -173,7 +173,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickTwoNumbers_thenAppendNumbers() {
@@ -186,7 +186,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.number("12")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickNumberWithEmptyFormula_thenAppendNumber() {
@@ -198,7 +198,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickNumberAndDot_thenAppendDot() {
@@ -211,7 +211,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.number("1.")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenClickNumberWithDotAndClickDot_thenDoNothing() {
@@ -224,7 +224,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.number("1.1")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenWithOperatorAndClickDot_thenAddZeroWithDot() {
@@ -238,7 +238,7 @@ final class CalculatorViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.formulaStack, [.oneButtonType, .plusButtonType, .number("0.")])
-        XCTAssertEqual(sut.result, CalculatorViewModel.defaultResult)
+        XCTAssertEqual(sut.resultString, CalculatorViewModel.defaultResult)
     }
 
     func test_whenWithFormulaAndClickEqual_thenGetResult() {
@@ -258,7 +258,7 @@ final class CalculatorViewModelTests: XCTestCase {
             sut.formulaStack,
             [.oneButtonType, .plusButtonType, .twoButtonType, .minusButtonType, .twoButtonType, .equalButtonType]
         )
-        XCTAssertEqual(sut.result, "1")
+        XCTAssertEqual(sut.resultString, "1")
     }
 
     func test_whenWithMultiplyAndDividInFormulaAndClickEqual_thenGetResult() {
@@ -294,6 +294,6 @@ final class CalculatorViewModelTests: XCTestCase {
                 .equalButtonType
             ]
         )
-        XCTAssertEqual(sut.result, "7.5")
+        XCTAssertEqual(sut.resultString, "7.5")
     }
 }
