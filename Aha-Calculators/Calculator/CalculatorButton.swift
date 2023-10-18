@@ -10,14 +10,14 @@ import UIKit
 import SnapKit
 
 final class CalculatorButton: UIButton {
-    enum Types {
+    enum Types: Equatable {
         case operation(_ op: String)
         case function(_ fun: String)
         case number(_ num: String)
         case arrow(_ ar: String)
     }
 
-    private let type: Types
+    let type: Types
 
     init(type: Types) {
         self.type = type

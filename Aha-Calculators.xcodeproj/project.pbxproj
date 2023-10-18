@@ -10,9 +10,13 @@
 		0A692962BCA0B9D5E9ECDB32 /* Pods_Aha_Calculators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB853507AA06642BB59482E0 /* Pods_Aha_Calculators.framework */; };
 		1E7ABBFCA1063B67E183F43E /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */; };
 		A2A4405C2AD4FA8E008B16DC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4405B2AD4FA8E008B16DC /* Calculator.swift */; };
+		A2A4405E2AD826EC008B16DC /* EnhancedCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4405D2AD826EC008B16DC /* EnhancedCalculatorViewModel.swift */; };
+		A2A440612AD935A4008B16DC /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A440602AD935A4008B16DC /* CalculatorViewModel.swift */; };
+		A2B1E3A82ADE22D200628A1E /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B1E3A72ADE22D200628A1E /* CalculatorViewModelTests.swift */; };
+		A2DD95842ADD43A10029C6BC /* CalculatorButtonTypes+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD95832ADD43A10029C6BC /* CalculatorButtonTypes+List.swift */; };
 		A2EF62E62ACFE82D001F7185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */; };
 		A2EF62E82ACFE82D001F7185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */; };
-		A2EF62EA2ACFE82D001F7185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E92ACFE82D001F7185 /* ViewController.swift */; };
+		A2EF62EA2ACFE82D001F7185 /* EnhancedCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62E92ACFE82D001F7185 /* EnhancedCalculatorViewController.swift */; };
 		A2EF62EF2ACFE82F001F7185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2EF62EE2ACFE82F001F7185 /* Assets.xcassets */; };
 		A2EF62F22ACFE82F001F7185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EF62F02ACFE82F001F7185 /* LaunchScreen.storyboard */; };
 		A2EF62FD2ACFE82F001F7185 /* Aha_CalculatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF62FC2ACFE82F001F7185 /* Aha_CalculatorsTests.swift */; };
@@ -44,10 +48,14 @@
 		4BEF653C4043D20071E71445 /* Pods_Aha_CalculatorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_CalculatorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F18D87F6BF8AC670CB25F1 /* Pods_Aha_Calculators_Aha_CalculatorsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aha_Calculators_Aha_CalculatorsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A4405B2AD4FA8E008B16DC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		A2A4405D2AD826EC008B16DC /* EnhancedCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedCalculatorViewModel.swift; sourceTree = "<group>"; };
+		A2A440602AD935A4008B16DC /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		A2B1E3A72ADE22D200628A1E /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
+		A2DD95832ADD43A10029C6BC /* CalculatorButtonTypes+List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonTypes+List.swift"; sourceTree = "<group>"; };
 		A2EF62E22ACFE82D001F7185 /* Aha-Calculators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aha-Calculators.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2EF62E92ACFE82D001F7185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2EF62E92ACFE82D001F7185 /* EnhancedCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedCalculatorViewController.swift; sourceTree = "<group>"; };
 		A2EF62EE2ACFE82F001F7185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2EF62F12ACFE82F001F7185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2EF62F32ACFE82F001F7185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +124,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2A4405F2AD93591008B16DC /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3D8982ACFF2D60074F7A1 /* CalculatorButton.swift */,
+				A2DD95832ADD43A10029C6BC /* CalculatorButtonTypes+List.swift */,
+				A2A4405B2AD4FA8E008B16DC /* Calculator.swift */,
+				A2A440602AD935A4008B16DC /* CalculatorViewModel.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		A2A440622AD935B3008B16DC /* EnhancedCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A2EF62E92ACFE82D001F7185 /* EnhancedCalculatorViewController.swift */,
+				A2A4405D2AD826EC008B16DC /* EnhancedCalculatorViewModel.swift */,
+			);
+			path = EnhancedCalculator;
+			sourceTree = "<group>";
+		};
 		A2EF62D92ACFE82D001F7185 = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +171,8 @@
 			children = (
 				A2EF62E52ACFE82D001F7185 /* AppDelegate.swift */,
 				A2EF62E72ACFE82D001F7185 /* SceneDelegate.swift */,
-				A2EF62E92ACFE82D001F7185 /* ViewController.swift */,
-				A2F3D8982ACFF2D60074F7A1 /* CalculatorButton.swift */,
-				A2A4405B2AD4FA8E008B16DC /* Calculator.swift */,
+				A2A440622AD935B3008B16DC /* EnhancedCalculator */,
+				A2A4405F2AD93591008B16DC /* Calculator */,
 				A2EF62EE2ACFE82F001F7185 /* Assets.xcassets */,
 				A2EF62F02ACFE82F001F7185 /* LaunchScreen.storyboard */,
 				A2EF62F32ACFE82F001F7185 /* Info.plist */,
@@ -157,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A2EF62FC2ACFE82F001F7185 /* Aha_CalculatorsTests.swift */,
+				A2B1E3A72ADE22D200628A1E /* CalculatorViewModelTests.swift */,
 			);
 			path = "Aha-CalculatorsTests";
 			sourceTree = "<group>";
@@ -408,10 +436,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2EF62EA2ACFE82D001F7185 /* ViewController.swift in Sources */,
+				A2A440612AD935A4008B16DC /* CalculatorViewModel.swift in Sources */,
+				A2EF62EA2ACFE82D001F7185 /* EnhancedCalculatorViewController.swift in Sources */,
+				A2DD95842ADD43A10029C6BC /* CalculatorButtonTypes+List.swift in Sources */,
 				A2EF62E62ACFE82D001F7185 /* AppDelegate.swift in Sources */,
 				A2EF62E82ACFE82D001F7185 /* SceneDelegate.swift in Sources */,
 				A2A4405C2AD4FA8E008B16DC /* Calculator.swift in Sources */,
+				A2A4405E2AD826EC008B16DC /* EnhancedCalculatorViewModel.swift in Sources */,
 				A2F3D8992ACFF2D60074F7A1 /* CalculatorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B1E3A82ADE22D200628A1E /* CalculatorViewModelTests.swift in Sources */,
 				A2EF62FD2ACFE82F001F7185 /* Aha_CalculatorsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,8 +619,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,8 +647,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -641,7 +671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.marstudio.Aha-CalculatorsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -661,7 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.marstudio.Aha-CalculatorsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -680,6 +710,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.marstudio.Aha-CalculatorsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -698,6 +729,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.marstudio.Aha-CalculatorsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

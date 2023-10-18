@@ -10,6 +10,8 @@ import SnapKit
 import UIKit
 
 final class Calculator: UIView {
+    private let viewModel = CalculatorViewModel()
+
     private enum Constant {
         static let buttonGapWidth: CGFloat = 5
         static let ratio: CGFloat = 1.15
@@ -18,11 +20,24 @@ final class Calculator: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        setupAction()
+        viewModel.output = self
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Public interface
+
+    var currentResult: String? {
+        resultLabel.text
+    }
+
+    func reset() {
+        resultLabel.text = nil
+        formulaLabel.text = nil
     }
 
     // MARK: - Private Methods
@@ -33,9 +48,9 @@ final class Calculator: UIView {
         resultLabel
             .addToParentView(self)
             .snp.makeConstraints {
-                $0.trailing.top.equalToSuperview()
+                $0.leading.trailing.top.equalToSuperview()
             }
-        resultLabel.text = "1234"
+        resultLabel.text = CalculatorViewModel.defaultResult
 
         formulaLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         formulaLabel.setContentHuggingPriority(.required, for: .vertical)
@@ -43,9 +58,9 @@ final class Calculator: UIView {
             .addToParentView(self)
             .snp.makeConstraints {
                 $0.top.equalTo(resultLabel.snp.bottom).offset(-10)
-                $0.leading.equalToSuperview()
+                $0.leading.trailing.equalToSuperview()
             }
-        formulaLabel.text = "1x2/3"
+        formulaLabel.text = " "
 
         buttonStack
             .addToParentView(self)
@@ -62,37 +77,52 @@ final class Calculator: UIView {
         }
     }
 
+    private func setupAction() {
+        buttons.forEach { [weak self] button in
+            guard let self else { return }
+            button.addTarget(self, action: #selector(didClickButton(_:)), for: .touchUpInside)
+        }
+    }
+
+    @objc private func didClickButton(_ button: CalculatorButton) {
+        viewModel.didClickButton(button)
+    }
+
     // MARK: - UI Components
     private lazy var resultLabel: UILabel = {
         $0.font = .systemFont(ofSize: 65)
         $0.textColor = .white
+        $0.adjustsFontSizeToFitWidth = true
+        $0.textAlignment = .right
         return $0
     }(UILabel())
 
     private lazy var formulaLabel: UILabel = {
         $0.font = .systemFont(ofSize: 25)
         $0.textColor = .white
+        $0.adjustsFontSizeToFitWidth = true
+        $0.textAlignment = .left
         return $0
     }(UILabel())
-    private let acButton = CalculatorButton(type: .function("AC"))
-    private let signButton = CalculatorButton(type: .function("+/-"))
-    private let percentButton = CalculatorButton(type: .function("%"))
-    let dividButton = CalculatorButton(type: .operation("÷"))
-    private let multiplyButton = CalculatorButton(type: .operation("x"))
-    private let minusButton = CalculatorButton(type: .operation("-"))
-    private let plusButton = CalculatorButton(type: .operation("+"))
-    private let equalButton = CalculatorButton(type: .operation("="))
-    private let oneButton = CalculatorButton(type: .number("1"))
-    private let twoButton = CalculatorButton(type: .number("2"))
-    private let threeButton = CalculatorButton(type: .number("3"))
-    private let fourButton = CalculatorButton(type: .number("4"))
-    private let fiveButton = CalculatorButton(type: .number("5"))
-    private let sixButton = CalculatorButton(type: .number("6"))
-    private let sevenButton = CalculatorButton(type: .number("7"))
-    private let eightButton = CalculatorButton(type: .number("8"))
-    private let nighButton = CalculatorButton(type: .number("9"))
-    private let zeroButton = CalculatorButton(type: .number("0"))
-    private let dotButton = CalculatorButton(type: .number("."))
+    private let acButton = CalculatorButton(type: .acButtonType)
+    private let signButton = CalculatorButton(type: .signButtonType)
+    private let percentButton = CalculatorButton(type: .percentButtonType)
+    let dividButton = CalculatorButton(type: .dividButtonType)
+    private let multiplyButton = CalculatorButton(type: .multiplyButtonType)
+    private let minusButton = CalculatorButton(type: .minusButtonType)
+    private let plusButton = CalculatorButton(type: .plusButtonType)
+    private let equalButton = CalculatorButton(type: .equalButtonType)
+    private let oneButton = CalculatorButton(type: .oneButtonType)
+    private let twoButton = CalculatorButton(type: .twoButtonType)
+    private let threeButton = CalculatorButton(type: .threeButtonType)
+    private let fourButton = CalculatorButton(type: .fourButtonType)
+    private let fiveButton = CalculatorButton(type: .fiveButtonType)
+    private let sixButton = CalculatorButton(type: .sixButtonType)
+    private let sevenButton = CalculatorButton(type: .sevenButtonType)
+    private let eightButton = CalculatorButton(type: .eightButtonType)
+    private let nighButton = CalculatorButton(type: .nighButtonType)
+    private let zeroButton = CalculatorButton(type: .zeroButtonType)
+    private let dotButton = CalculatorButton(type: .dotButtonType)
     private lazy var buttons = [
         acButton,
         signButton,
@@ -134,6 +164,18 @@ final class Calculator: UIView {
             )
             .setDistribution(.fillEqually)
     }(UIStackView())
+}
+
+// MARK: - Output Extension
+
+extension Calculator: CalculatorViewModelOutput {
+    func didUpdateResult(_ result: String) {
+        resultLabel.text = result
+    }
+
+    func didUpdateFormula(_ formula: String) {
+        formulaLabel.text = formula
+    }
 }
 
 // MARK: - Private Extensions

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EnhancedCalculatorViewController.swift
 //  Aha-Calculators
 //
 //  Created by Cheng Lung, Lin on 2023/10/6.
@@ -8,10 +8,16 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+final class EnhancedCalculatorViewController: UIViewController {
+    private let viewModel = EnhancedCalculatorViewModel()
+
     private var buttonHeight: CGFloat? {
         let button = leftCalculator.dividButton
         return button.frame.height == 0 ? nil : button.frame.height
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func viewDidLoad() {
@@ -61,36 +67,43 @@ class ViewController: UIViewController {
 
         switch orientation {
         case .portrait, .portraitUpsideDown:
-            [
-                rightCalculator,
-                leftArrowButton,
-                rightArrowButton,
-                deleteButton
-            ].forEach {
-                $0.isHidden = true
-                $0.snp.removeConstraints()
-            }
-
-            leftCalculator.snp.remakeConstraints {
-                $0.height.equalTo(view.snp.width)
-                $0.center.equalToSuperview()
-            }
-            return
+            setSingleCalculatorLayout()
         default:
-            [
-                rightCalculator,
-                leftArrowButton,
-                rightArrowButton,
-                deleteButton
-            ].forEach { $0.isHidden = false }
-            leftCalculator.snp.remakeConstraints {
-                $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-                $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            }
-            rightCalculator.snp.remakeConstraints {
-                $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-                $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            }
+            setTwoCalculatorLayout()
+        }
+    }
+
+    private func setSingleCalculatorLayout() {
+        [
+            rightCalculator,
+            leftArrowButton,
+            rightArrowButton,
+            deleteButton
+        ].forEach {
+            $0.isHidden = true
+            $0.snp.removeConstraints()
+        }
+
+        leftCalculator.snp.remakeConstraints {
+            $0.height.equalTo(view.snp.width)
+            $0.center.equalToSuperview()
+        }
+    }
+
+    private func setTwoCalculatorLayout() {
+        [
+            rightCalculator,
+            leftArrowButton,
+            rightArrowButton,
+            deleteButton
+        ].forEach { $0.isHidden = false }
+        leftCalculator.snp.remakeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        rightCalculator.snp.remakeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
 
         guard let buttonHeight = buttonHeight else { return }
@@ -122,8 +135,8 @@ class ViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private let leftCalculator = Calculator()
-    private let rightCalculator = Calculator()
+    private lazy var leftCalculator = Calculator()
+    private lazy var rightCalculator = Calculator()
     private let rightArrowButton = CalculatorButton(type: .arrow("➡\u{FE0E}"))
     private lazy var leftArrowButton: CalculatorButton = {
         $0.titleLabel?.transform = CGAffineTransformMakeRotation(.pi)
