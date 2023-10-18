@@ -24,7 +24,7 @@ extension CalculatorButton.Types {
     static let sixButtonType: CalculatorButton.Types = .number("6")
     static let sevenButtonType: CalculatorButton.Types = .number("7")
     static let eightButtonType: CalculatorButton.Types = .number("8")
-    static let nighButtonType: CalculatorButton.Types = .number("9")
+    static let nineButtonType: CalculatorButton.Types = .number("9")
     static let zeroButtonType: CalculatorButton.Types = .number("0")
     static let dotButtonType: CalculatorButton.Types = .number(".")
 }

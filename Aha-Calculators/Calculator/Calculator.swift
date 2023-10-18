@@ -120,7 +120,7 @@ final class Calculator: UIView {
     private let sixButton = CalculatorButton(type: .sixButtonType)
     private let sevenButton = CalculatorButton(type: .sevenButtonType)
     private let eightButton = CalculatorButton(type: .eightButtonType)
-    private let nighButton = CalculatorButton(type: .nighButtonType)
+    private let nineButton = CalculatorButton(type: .nineButtonType)
     private let zeroButton = CalculatorButton(type: .zeroButtonType)
     private let dotButton = CalculatorButton(type: .dotButtonType)
     private lazy var buttons = [
@@ -140,7 +140,7 @@ final class Calculator: UIView {
         sixButton,
         sevenButton,
         eightButton,
-        nighButton,
+        nineButton,
         zeroButton,
         dotButton
     ]
@@ -152,7 +152,7 @@ final class Calculator: UIView {
                 [
                     UIStackView(arrangedSubviews: [acButton, signButton, percentButton, dividButton])
                         .setSpacing(Constant.buttonGapWidth * Constant.ratio),
-                    UIStackView(arrangedSubviews: [sevenButton, eightButton, nighButton, multiplyButton])
+                    UIStackView(arrangedSubviews: [sevenButton, eightButton, nineButton, multiplyButton])
                         .setSpacing(Constant.buttonGapWidth * Constant.ratio),
                     UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, minusButton])
                         .setSpacing(Constant.buttonGapWidth * Constant.ratio),

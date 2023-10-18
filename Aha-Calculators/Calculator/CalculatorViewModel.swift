@@ -199,14 +199,14 @@ final class CalculatorViewModel {
         }
 
         var result: Double?
-        var lastOperater: CalculatorButton.Types?
+        var lastOperator: CalculatorButton.Types?
         for element in formula {
             switch element {
             case .number:
                 if result == nil {
                     result = element.numDouble
-                } else if let lastOperater = lastOperater, let number = element.numDouble {
-                    switch lastOperater {
+                } else if let lastOperator = lastOperator, let number = element.numDouble {
+                    switch lastOperator {
                     case .plusButtonType:
                         result = (result ?? 0) + number
                     case .minusButtonType:
