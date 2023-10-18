@@ -5,8 +5,8 @@
 //  Created by Cheng Lung, Lin on 2023/10/6.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class EnhancedCalculatorViewController: UIViewController {
     private let viewModel = EnhancedCalculatorViewModel()
@@ -25,6 +25,7 @@ final class EnhancedCalculatorViewController: UIViewController {
         observeRotation()
         setupUI()
         setupAction()
+        viewModel.output = self
     }
 
     override func viewDidLayoutSubviews() {
@@ -143,16 +144,15 @@ final class EnhancedCalculatorViewController: UIViewController {
     // MARK: - Selectors
 
     @objc private func didClickRightArrowButton() {
-        rightCalculator.setResult(leftCalculator.currentResult)
+        viewModel.didClickRightArrowButton()
     }
 
     @objc private func didClickLeftArrowButton() {
-        leftCalculator.setResult(rightCalculator.currentResult)
+        viewModel.didClickLeftArrowButton()
     }
 
     @objc private func didClickDeleteButton() {
-        rightCalculator.reset()
-        leftCalculator.reset()
+        viewModel.didClickDeleteButton()
     }
 
     // MARK: - UI Components
@@ -164,5 +164,31 @@ final class EnhancedCalculatorViewController: UIViewController {
         $0.titleLabel?.transform = CGAffineTransformMakeRotation(.pi)
         return $0
     }(CalculatorButton(type: .arrow("➡\u{FE0E}")))
+
     private let deleteButton = CalculatorButton(type: .function("DEL"))
+}
+
+extension EnhancedCalculatorViewController: EnhancedCalculatorViewModelOutput {
+    var rightCalculatorResult: String {
+        get {
+            rightCalculator.currentResult
+        }
+        set {
+            rightCalculator.setResult(newValue)
+        }
+    }
+
+    var leftCalculatorResult: String {
+        get {
+            leftCalculator.currentResult
+        }
+        set {
+            leftCalculator.setResult(newValue)
+        }
+    }
+
+    func resetCalculators() {
+        rightCalculator.reset()
+        leftCalculator.reset()
+    }
 }
